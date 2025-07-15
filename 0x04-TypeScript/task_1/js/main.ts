@@ -31,3 +31,11 @@ const director1: Directors={
   contract: true
 }
 
+
+//function
+function printTeacher 
+  (firstName: string, lastName: string): string {
+    return `${firstName.charAt(0)}. ${lastName}`;
+  }
+
+  console.log(printTeacher("hagos", "Yacob"))
