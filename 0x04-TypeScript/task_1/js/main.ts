@@ -199,3 +199,18 @@ function executeWork(employee: Director | Teacher): string {
 
 
 
+// Define a string literal type
+type Subjects = 'Math' | 'History';
+
+// Define the function
+function teachClass(todayClass: Subjects): string {
+  if (todayClass === 'Math') {
+    return 'Teaching Math';
+  } else {
+    return 'Teaching History';
+  }
+}
+
+
+
+
