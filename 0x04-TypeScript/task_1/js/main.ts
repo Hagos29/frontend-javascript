@@ -10,11 +10,20 @@ interface Teacher {
 
 const teacher3: Teacher = {
   firstName: 'Hagos',
-  fullTimeEmployee : false,
+  fullTimeEmployee: false,
   lastName: 'Beyene',
   location: 'Eritrea',
   contract: false,
-  yearsOfExperience: 2
+  yearsOfExperience: 2,
+  workFromHome: function (): string {
+    throw new Error("Function not implemented.");
+  },
+  getCoffeeBreak: function (): string {
+    throw new Error("Function not implemented.");
+  },
+  workTeacherTasks: function (): string {
+    throw new Error("Function not implemented.");
+  }
 };
 
 interface Directors extends Teacher{
@@ -28,7 +37,19 @@ const director1: Directors={
   fullTimeEmployee: true,
   numberOfReports: 17,
   yearsOfExperience: 40,
-  contract: true
+  contract: true,
+  workFromHome: function (): string {
+    throw new Error("Function not implemented.");
+  },
+  getCoffeeBreak: function (): string {
+    throw new Error("Function not implemented.");
+  },
+  workDirectorTasks: function (): string {
+    throw new Error("Function not implemented.");
+  },
+  workTeacherTasks: function (): string {
+    throw new Error("Function not implemented.");
+  }
 }
 
 
@@ -109,7 +130,7 @@ class Director implements DirectorInterface {
   }
 }
 
-class Teacher implements TeacherInterface {
+class Teachers implements TeacherInterface {
   workFromHome(): string {
     return 'Cannot work from home';
   }
@@ -147,7 +168,7 @@ interface TeacherInterface {
 }
 
 // Classes
-class Director implements DirectorInterface {
+class Directors implements DirectorInterface {
   workFromHome(): string {
     return 'Working from home';
   }
@@ -176,7 +197,7 @@ class Teacher implements TeacherInterface {
 }
 
 // Create employee
-function createEmployee(salary: number | string): Director | Teacher {
+function createEmployees(salary: number | string): Director | Teacher {
   if (typeof salary === 'number' && salary < 500) {
     return new Teacher();
   }
